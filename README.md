@@ -10,7 +10,7 @@ Features
 
 How to Run
 Clone this repository:
-git clone https://github.com/your-username/caesar-cipher-python.git
+git clone https://github.com/raghavmishra1/caesar-cipher-python.git
 cd caesar-cipher-python
 
 Run the script:
