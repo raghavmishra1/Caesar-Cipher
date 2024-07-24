@@ -5,8 +5,11 @@ This repository contains a simple implementation of the Caesar Cipher in Python.
 
 # Features
 -->Encryption: Encrypts plaintext by shifting each letter by a specified number of positions.
--->Decryption: Decrypts ciphertext by reversing the shift applied during encryption.
+
+-->Decryption: Decrypts ciphertext by reversing the shift applied during encryption
+.
 -->Case Preservation: Maintains the case (uppercase or lowercase) of the original text.
+
 -->Non-Alphabetic Characters: Handles non-alphabetic characters by leaving them unchanged.
 
 # How to Run
