@@ -1,46 +1,56 @@
-#Caesar Cipher Implementation in Python
-This repository contains a simple and educational implementation of the Caesar Cipher in Python.
-The Caesar Cipher is a type of substitution cipher where each letter in the plaintext is shifted a certain number of places in the alphabet. It is one of the earliest and simplest forms of encryption.
 
-🚀 Features
-🔐 Encryption: Encrypts plaintext by shifting each letter by a specified number of positions.
+# 🛡️ Caesar Cipher Implementation in Python
 
-#🔓 Decryption: Reverses the encryption by shifting letters back using the same shift value.
 
-🧠 Brute-force Decryption: Tries all 26 possible shift values to guess the original message (helpful if the shift is unknown).
 
-🔤 Case Preservation: Maintains the original case (uppercase or lowercase) of letters.
 
-🔣 Non-Alphabetic Characters: Keeps symbols, numbers, and spaces unchanged during encryption/decryption.
+A simple Caesar Cipher tool with encryption, decryption, and brute-force mode.
 
-🛠️ How to Run
-Clone this repository:
+The Caesar Cipher is a classic encryption technique that shifts letters of the alphabet. This repo offers a beginner-friendly Python implementation with interactive CLI support.
 
-bash
-Copy
-Edit
+
+
+
+## Features
+
+🔐 Encrypt: Convert plaintext into ciphertext with a custom shift.
+
+🔓 Decrypt: Revert the encrypted message using the original shift.
+
+🧠 Brute-force Decrypt: Try all possible shifts to guess the original text.
+
+🔤 Case Sensitive: Maintains uppercase/lowercase characters.
+
+🔣 Handles Symbols: Leaves spaces, numbers, and special characters unchanged.
+
+
+## Installation
+
+Clone the Repository:
+
+```bash
 git clone https://github.com/raghavmishra1/Implement-Caesar-Cipher
+```
+```bash
 cd Implement-Caesar-Cipher
-Run the script:
-
-bash
-Copy
-Edit
+```
+```bash
 python caesar_cipher.py
-Choose an option:
+```
 
-(E) Encrypt a message
+## File Structure
 
-(D) Decrypt a message
+ - Implement-Caesar-Cipher/
 
-(B) Brute-force decrypt without knowing the shift
+├── caesar_cipher.py  
+├── README.md           
+└── LICENSE            
 
-📂 File Structure
-caesar_cipher.py: Main script with encryption, decryption, and brute-force logic.
+## License
 
-LICENSE: Project license (MIT).
+- Licensed under the MIT License.
+- See the LICENSE file for details.
+## Authors
 
-📄 License
-This project is licensed under the MIT License.
-See the LICENSE file for more details.
 
+Developed with 💻 and 🔐 by Raghav Mishra
