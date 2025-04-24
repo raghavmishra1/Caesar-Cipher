@@ -29,10 +29,10 @@ The Caesar Cipher is a classic encryption technique that shifts letters of the a
 Clone the Repository:
 
 ```bash
-git clone https://github.com/raghavmishra1/Implement-Caesar-Cipher
+git clone https://github.com/raghavmishra1/Caesar-Cipher
 ```
 ```bash
-cd Implement-Caesar-Cipher
+cd Caesar-Cipher
 ```
 ```bash
 python caesar_cipher.py
@@ -40,7 +40,7 @@ python caesar_cipher.py
 
 ## File Structure
 
- - Implement-Caesar-Cipher/
+ - Caesar-Cipher/
 
 ├── caesar_cipher.py  
 ├── README.md           
