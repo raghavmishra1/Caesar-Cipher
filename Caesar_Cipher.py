@@ -1,3 +1,6 @@
+import string
+
+# ------------------ Caesar Cipher ------------------
 def caesar_encrypt(text, shift):
     result = ""
     for char in text:
@@ -12,28 +15,37 @@ def caesar_decrypt(text, shift):
     return caesar_encrypt(text, -shift)
 
 def caesar_brute_force(text):
-    print("\nBrute-force Caesar Decryption Results:")
+    print("\n🔍 Brute-force Caesar Decryption Results:\n")
     for shift in range(26):
         decrypted = caesar_decrypt(text, shift)
         print(f"Shift {shift}: {decrypted}")
+    print("-" * 50)
 
+# ------------------ XOR Cipher ------------------
 def xor_encrypt_decrypt(text, key):
     return ''.join(chr(ord(c) ^ key) for c in text)
 
+def is_mostly_printable(text, threshold=0.9):
+    printable = set(string.printable)
+    return sum(1 for c in text if c in printable) / len(text) >= threshold
+
 def xor_brute_force(text):
-    print("\nBrute-force XOR Decryption Results:")
-    for key in range(1, 256):
+    print("\n🔍 Brute-force XOR Decryption Results (Printable Only):\n")
+    for key in range(256):
         try:
             decrypted = xor_encrypt_decrypt(text, key)
-            print(f"Key {key}: {decrypted}")
+            if is_mostly_printable(decrypted):
+                ascii_key = chr(key) if 32 <= key <= 126 else "Non-printable"
+                print(f"Key (int): {key}, Key (ASCII): {ascii_key}\nDecrypted Message: {decrypted}\n{'-'*50}")
         except Exception:
             continue
 
+# ------------------ Main CLI Program ------------------
 def main():
-    print("Encryption Tool (Caesar & XOR)")
-    print("Use responsibly and for educational purposes only.")
+    print("🔐 Encryption Tool: Caesar Cipher + XOR Cipher")
+    print("Use this tool responsibly and for educational purposes only.\n")
     
-    print("\nAvailable Modes:")
+    print("📌 Available Modes:")
     print(" 1. Caesar Encrypt (C-E)")
     print(" 2. Caesar Decrypt (C-D)")
     print(" 3. Caesar Brute-force (C-B)")
@@ -43,7 +55,7 @@ def main():
     choice = input("\nSelect a mode: ").strip().upper()
 
     if choice not in ['C-E', 'C-D', 'C-B', 'X-E', 'X-B']:
-        print("Invalid choice!")
+        print("❌ Invalid choice!")
         return
 
     text = input("Enter the message: ").strip()
@@ -58,14 +70,14 @@ def main():
                 shift = int(shift_input)
                 break
             except ValueError:
-                print("Invalid shift! Enter a valid integer.")
+                print("❗ Invalid shift! Enter a valid integer.")
         
         if choice == 'C-E':
             result = caesar_encrypt(text, shift)
-            print("Encrypted (Caesar):", result)
+            print("✅ Encrypted (Caesar):", result)
         else:
             result = caesar_decrypt(text, shift)
-            print("Decrypted (Caesar):", result)
+            print("✅ Decrypted (Caesar):", result)
 
     elif choice == 'X-E':
         while True:
@@ -75,12 +87,12 @@ def main():
                 if 0 <= key <= 255:
                     break
                 else:
-                    print("Key must be between 0 and 255.")
+                    print("❗ Key must be between 0 and 255.")
             except ValueError:
-                print("Invalid key! Enter an integer between 0 and 255.")
+                print("❗ Invalid key! Enter an integer between 0 and 255.")
         
         result = xor_encrypt_decrypt(text, key)
-        print("XOR Result:", result)
+        print("✅ XOR Result:", result)
 
     elif choice == 'X-B':
         xor_brute_force(text)
